@@ -1,0 +1,95 @@
+import java.util.Scanner;
+public class Project3
+{
+    public static void displayResult()
+    {
+        Scanner asa = new Scanner(System.in);
+
+    float total=a + b + c;
+System.out.println("\n****BIGG BOSS VOTING***");
+System.out.println("Candidates\tResult\t% of Total Votes");
+System.out.println("\nA: SHRIHAN\t" + a + "\t" + a/total * 100);
+System.out.println("B: SREE SATHYA\t" + b + "\t" + b/total * 100);
+System.out.println("C: FAIMA\t\t" + c + "\t" + c/total * 100);
+System.out.println("\nTOTAL VOTES: " + total);
+String winner="";
+if(a>b && a>c)
+winner="SHRIHAN";
+if(b>a && b>c)
+winner="SREE SATHYA";
+if(c>a && c>b)
+winner="FAIMA";
+System.out.println("\nAnd the winner is: " + winner);
+System.out.println("----------------------");
+System.out.println("Type V-vote");
+System.out.println("Type R-result");
+System.out.println("Type Q-quit");
+System.out.print("Enter your choice: ");
+choice = asa.nextLine();
+    }
+    
+    
+    public static void displayVote()
+    {
+        Scanner asa = new Scanner(System.in);
+
+        System.out.print("Enter your vote: ");
+candid = asa.next();
+candidcode = candid.charAt(0);
+switch(candidcode)
+{
+case 'A':
+case 'a': a++; break;
+case 'B':
+case 'b': b++; break;
+case 'C': 
+case 'c': c++; break;
+default: System.out.println("Invalid candidates code");
+}
+
+    }
+    
+    
+    
+static    String choice, candid;
+static char candidcode;
+static int a=0, b=0, c=0;    
+    
+    
+public static void main( String[] args )
+{ 
+Scanner asa = new Scanner(System.in);
+
+do
+{
+System.out.println("\n   ****WELCOME TO BIGG BOSS***");
+System.out.println("Candidates");
+System.out.println("\nA: SHRIHAN");
+System.out.println("B: SREE SATHYA");
+System.out.println("C: FAIMA");
+System.out.println("----------------------");
+System.out.println("Type V-vote");
+System.out.println("Type R-result");
+System.out.println("Type Q-quit");
+System.out.print("Enter your choice: ");
+choice = asa.nextLine();
+
+
+
+if(choice.equalsIgnoreCase("V"))
+{
+displayVote();
+System.out.println("****Successfully voting is completed****");
+}
+
+
+
+if(choice.equalsIgnoreCase("R"))
+{
+displayResult();
+break;
+} 
+}
+while(!(choice.equalsIgnoreCase("Q"))); 
+}
+}
